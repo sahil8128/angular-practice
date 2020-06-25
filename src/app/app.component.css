@@ -1,0 +1,11 @@
+.get{
+  color: red;
+  background: yellow;
+  border: solid green ;
+}
+
+.post{
+  color: blue;
+  background: yellow;
+  border: solid red;
+}
