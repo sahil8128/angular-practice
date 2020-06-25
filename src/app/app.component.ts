@@ -12,9 +12,10 @@ export class AppComponent  {
   newPlayer = {name : "Sahil"};
 
     getData(){
-    this.http.get('https://my-json-server.typicode.com/sahil8128/ausplayers/players').toPromise().then(val => console.log(val));
-    
- //.subscribe(val =>  console.log(val))
+    this.http.get('https://my-json-server.typicode.com/sahil8128/ausplayers/players')
+    .toPromise()
+    .then(val => console.log("Success : ", val))
+    .catch(val => console.log("Failure : ",val));
 
     console.log("Hello");
     this.fun();
@@ -30,7 +31,7 @@ export class AppComponent  {
 
   postData(){
     this.http.post('https://my-json-server.typicode.com/sahil8128/ausplayers/players',this.newPlayer).subscribe(res => {
-      if (res.hasOwnProperty("age")){
+      if (res.hasOwnProperty("id")){
         console.log("New Player Added to Squad");
       }
       else{
